@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "Social Media Scraper Dashboard API",
+    "description": "API collection for Social Media Scraper Dashboard",
+    "version": "1.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/"
+  },
+  "item": [
+    {
+      "name": "Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/posts?page=1&limit=20&excludeGibberish=true",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "posts"],
+          "query": [
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "20" },
+            { "key": "excludeGibberish", "value": "true" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Posts",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/posts/search?q=passport",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "posts", "search"],
+          "query": [{ "key": "q", "value": "passport" }]
+        }
+      }
+    },
+    {
+      "name": "Get Statistics",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/posts/statistics",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "posts", "statistics"]
+        }
+      }
+    },
+    {
+      "name": "Get Trending Posts",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/posts/trending",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "posts", "trending"]
+        }
+      }
+    },
+    {
+      "name": "Get Clusters",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/clusters",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "clusters"]
+        }
+      }
+    },
+    {
+      "name": "Start Scraping",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"platforms\": [\"twitter\", \"reddit\", \"youtube\"]}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/scraper/start",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "scraper", "start"]
+        }
+      }
+    },
+    {
+      "name": "Export CSV",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/export/csv",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "export", "csv"]
+        }
+      }
+    },
+    {
+      "name": "Generate Report",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/api/export/report",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "export", "report"]
+        }
+      }
+    }
+  ]
+}
